@@ -9,11 +9,18 @@ import cors from 'cors';
 dotenv.config();
 
 const app = express();
-const port = 3000;
 
+const frontendURL="https://ai-chatbot-gamma-livid.vercel.app";
 
-app.use(cors()); 
+const corsOptions = {
+  origin: frontendURL,
+};
+app.use(cors(corsOptions)); // Use the specific options
+// --- End of CORS Configuration ---
+const port = 3000; 
 app.use(express.json());
+
+
 
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
 
