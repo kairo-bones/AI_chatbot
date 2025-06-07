@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINO - Your Finance Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💸</text></svg>">
+</head>
+<body>
+    <header>
+       <div class="logo-container">
+         <img style="height:3rem;border-radius: 30%;margin-right:6px;" src="https://img.freepik.com/free-vector/chatbot-chat-message-vectorart_78370-4104.jpg?semt=ais_hybrid&w=740" alt="FINO Logo">
+         <h1>FINO</h1>
+      </div>
+    <p>Desi Finance Buddy</p>
+    </header>
+
+    <main id="chat-container">
+        <!-- Chat messages will be added here by JavaScript -->
+        <div class="message bot-message">
+            <span class="avatar">🤖</span>
+            <p>Haan bhai, bol kya scene hai? Finance ka koi lafda hai to bata, faltu baat mat karna.</p>
+        </div>
+    </main>
+
+    <footer>
+        <form id="chat-form">
+            <input type="text" id="message-input" placeholder="Ask me anything about finance..." autocomplete="off" required>
+            <button type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icon">
+                    <path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
+                </svg>
+            </button>
+        </form>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
