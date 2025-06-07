@@ -23,7 +23,7 @@ chatForm.addEventListener('submit', async (e) => {
     const typingIndicator = addMessageToChat('bot', '...', true);
 
     try {
-        const response = await fetch('https://ai-chatbot-qkt8.onrender.com', {
+        const response = await fetch('https://ai-chatbot-qkt8.onrender.com/chat', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
