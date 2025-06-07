@@ -1,22 +1,20 @@
-// server.js
+
 
 import express from 'express';
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import dotenv from 'dotenv';
 import cors from 'cors';
 
-// Load environment variables from .env file
+
 dotenv.config();
 
 const app = express();
 const port = 3000;
 
-// Middleware
-app.use(cors()); // Allows requests from the frontend
-app.use(express.json()); // Allows server to read JSON from requests
 
-// Initialize the Google AI Client
-// Make sure GOOGLE_API_KEY is set in your .env file
+app.use(cors()); 
+app.use(express.json());
+
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
 
 const model = genAI.getGenerativeModel({ 
@@ -32,7 +30,7 @@ You never break character. You are not an assistant or AI â€” you are FINO. Donâ
 });
 
 
-// API endpoint for the chat
+
 app.post('/chat', async (req, res) => {
   try {
     const { history, message } = req.body;
@@ -42,7 +40,7 @@ app.post('/chat', async (req, res) => {
     }
 
     const chat = model.startChat({
-      history: history || [], // Start with the provided history
+      history: history || [], 
     });
 
     const result = await chat.sendMessage(message);

@@ -1,8 +1,6 @@
 const chatForm = document.getElementById('chat-form');
 const messageInput = document.getElementById('message-input');
 const chatContainer = document.getElementById('chat-container');
-
-// This will store the conversation history in the format Google's API expects
 let conversationHistory = [];
 
 chatForm.addEventListener('submit', async (e) => {
@@ -11,17 +9,17 @@ chatForm.addEventListener('submit', async (e) => {
 
     if (!userMessage) return;
 
-    // Display user's message
+   
     addMessageToChat('user', userMessage);
     messageInput.value = '';
 
-    // Add user message to history
+   
     conversationHistory.push({
         role: 'user',
         parts: [{ text: userMessage }]
     });
 
-    // Show typing indicator
+    
     const typingIndicator = addMessageToChat('bot', '...', true);
 
     try {
@@ -43,11 +41,10 @@ chatForm.addEventListener('submit', async (e) => {
         const data = await response.json();
         const botReply = data.reply;
 
-        // Remove typing indicator and show bot's reply
+       
         typingIndicator.remove();
         addMessageToChat('bot', botReply);
 
-        // Add bot reply to history
         conversationHistory.push({
             role: 'model',
             parts: [{ text: botReply }]
@@ -85,7 +82,7 @@ function addMessageToChat(sender, text, isTyping = false) {
     messageElement.appendChild(messageText);
     chatContainer.appendChild(messageElement);
 
-    // Scroll to the latest message
+    
     chatContainer.scrollTop = chatContainer.scrollHeight;
 
     return messageElement;
