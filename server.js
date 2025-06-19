@@ -15,7 +15,7 @@ const corsOptions = {
 };
 app.use(cors(corsOptions)); // Use the specific options
 // --- End of CORS Configuration ---
-const port = 3000; 
+const port = process.env.PORT || 3000;
 app.use(express.json());
 
 
@@ -61,5 +61,5 @@ app.post('/chat', async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`FINO server listening on http://localhost:${port}`);
+  console.log(`FINO server listening on http://localhost:${process.env.PORT || 3000}`);
 });
