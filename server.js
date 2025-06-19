@@ -61,5 +61,5 @@ app.post('/chat', async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`FINO server listening on http://localhost:${process.env.PORT || 3000}`);
+  console.log(`FINO server listening on http://localhost:${port}`);
 });
